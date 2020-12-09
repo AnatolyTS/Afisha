@@ -10,6 +10,10 @@ public class AfishaManager {
         this.itemsToShow = itemsToShow;
     }
 
+    public AfishaManager() {}
+
+    private int afishaLength  = 10;
+
     public void add(Film item) {
         int length = items.length + 1;
         Film[] tmp = new Film[length];
@@ -24,6 +28,11 @@ public class AfishaManager {
 
     public Film[] getLastAddedItems() {
         int lenght = itemsToShow;
+
+        if (itemsToShow < 0) {
+            lenght = 0;
+        }
+
         if (lenght > items.length) {
             lenght = items.length;
         }
@@ -36,4 +45,5 @@ public class AfishaManager {
         }
         return result;
     }
+
 }
