@@ -96,6 +96,26 @@ public class AfishaManagerTest {
         manager.add(eleventh);
 
         Film[] actual = manager.getLastAddedItems();
-        Film[] expected = new Film[]{eleventh,tenth, ninth, eight, seventh, sixth, fifth, fourth, third, second,first};
+        Film[] expected = new Film[]{eleventh, tenth, ninth, eight, seventh, sixth, fifth, fourth, third, second, first};
+    }
+
+    @Test
+    void shouldShowMoreThanMax() {
+        AfishaManager manager = new AfishaManager(25);
+
+        manager.add(first);
+        manager.add(second);
+        manager.add(third);
+        manager.add(fourth);
+        manager.add(fifth);
+        manager.add(sixth);
+        manager.add(seventh);
+        manager.add(eight);
+        manager.add(ninth);
+        manager.add(tenth);
+        manager.add(eleventh);
+
+        Film[] actual = manager.getLastAddedItems();
+        Film[] expected = new Film[]{eleventh, tenth, ninth, eight, seventh, sixth, fifth, fourth, third, second, first};
     }
 }

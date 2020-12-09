@@ -10,6 +10,10 @@ public class AfishaManager {
         this.itemsToShow = itemsToShow;
     }
 
+    public AfishaManager() {}
+
+    private int afishaLength  = 10;
+
     public void add(Film item) {
         int length = items.length + 1;
         Film[] tmp = new Film[length];
@@ -41,4 +45,5 @@ public class AfishaManager {
         }
         return result;
     }
+
 }
